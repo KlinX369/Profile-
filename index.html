@@ -22,13 +22,13 @@
             scroll-behavior: smooth;
         }
         aside{
-            min-width: 70px;
+            width: 70px;
             height: 100dvh;
             background-color: #e2d9d9;
             overflow: hidden;
         }
         aside:hover{
-            width: 240px;
+            width: clamp(200px, 25vw, 240px);
             transition: width 0.3s ease-in-out;
         }
         .logo img{
@@ -41,18 +41,18 @@
             display: flex;
             align-items: center;
             text-align: center;
-            gap: clamp(5px, 10px, 20px);
+            gap: clamp(5px, 2vw, 20px);
             padding:10px;
             background-color: #757171;
         }
         .logo_name{
-            font-size: clamp(10px, 12px, 2rem);
+            font-size: clamp(12px, 3vw, 1.2rem);
             padding: 0;
             box-shadow: 2px 1px 1px 1px red;
         }
         .logo_name h3{
             color: #2ad04e;
-            font-size: bolder;
+            font-weight: 700;
         }
         .logo_name span{
             color: #0b26a8;
@@ -85,7 +85,7 @@
             overflow: hidden;
         }
         .menu_bars ul a i{
-            font-size: 1.5 rem;
+            font-size: 1.5rem;
             color: rgb(175, 113, 175);
         }
         .menu_bars li:hover{
@@ -107,19 +107,23 @@
             background-image: url(green.png);
             background-repeat: no-repeat;
             background-size: cover;
-            opacity: 0.5;
+            background-color: rgba(0, 0, 0, 0.3);
+            background-blend-mode: overlay; 
         }
         .header--wrapper{
             background-color: rgb(78, 151, 88);
             height: 14vh;
             display: flex;
             padding: 0 10px;
+            align-items: center;
+            flex-wrap: wrap;
         }
         .header--wrapper .left{
-            gap: 30px;
+            gap: 10px;
             display: flex;
-            min-width: 30vw;
-            height: 30px;
+            flex: 1;
+            min-width: 180px;
+            height: 40px;
             margin: 10px 0;
             background-color: white;
             border-radius: 5px;
@@ -139,8 +143,9 @@
         }
         .header--wrapper .right{
             display: flex;
-            padding: 10px 30px;
-            gap: 20px;
+            padding: 10px 15px;
+            gap: 15px;
+            align-items: center;
         }
         .header--wrapper .right img{
             max-width: 40px;
@@ -173,20 +178,24 @@
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
+            justify-content: center;
             margin: 20px;
         }
         .personal_data, .personal_picture, .personal_motivation{
             border: 1px solid black;
             box-shadow: 1px 1px 1px 3px rgb(8, 117, 8);
-            width: 350px;
-            max-height: 300px;
+            width: 100%;
+            max-width: 350px;
+            min-width: 250px;
+            max-height: 400px;
             border-radius: 10px;
             padding: 20px;
+            flex: 1 1 auto;
             gap: 20px;
             background-color: #fff;
         }
         .personal_works_container h3{
-            font-size: bolder;
+            font-weight: bolder;
             text-align: left;
             text-decoration: underline;
             color: rgb(21, 51, 182);
@@ -202,7 +211,7 @@
             border-radius: 50%;
             padding: 5px;
             border: 2px solid red;
-            transform: scale(1.1);
+            transform: scale(1.02);
             transition: all 1s;
         }
         .personal_data pre{
@@ -222,9 +231,11 @@
         }
         .footer{
             background-color: #000;
-            border: 2px solid red;
+            border: none;
+            padding-bottom: 15px;
+            min-height: 15vh;
             width: 100%;
-            height:15vh;
+            height: auto;
         }
         .footer h4{
             color: white;
